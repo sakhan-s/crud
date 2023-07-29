@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Редактировать пользователя</h1>
+
+<form method="POST">
+  <div>
+    <label>Имя:</label>
+    <input name="name" value="{{ user['name'] }}" type="text">
+  </div>
+
+  <div>
+    <label>Email:</label>  
+    <input name="email" value="{{ user['email'] }}" type="email">
+  </div>
+
+  <button type="submit">Сохранить</button>
+</form>
+
+{% endblock %}

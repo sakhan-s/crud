@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CRUD APP</title>
+</head>
+
+<body>
+<style>
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+table {
+  border: 2px solid red;  
+}
+
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: rgb(184, 48, 48);
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px 2px;
+  cursor: pointer;
+}
+</style>
+  <header>
+    <h1>Моё приложение</h1>
+    <nav>
+      <a href="{{ url_for('index') }}">Главная</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; 2023 CRUD APP by sakhan-s</p>
+  </footer>
+
+</body>
+</html>

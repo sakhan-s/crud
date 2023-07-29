@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1>Пользователи</h1>  
+
+  <a href="{{ url_for('add_user') }}">Добавить пользователя</a>
+
+  {% if users %}
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Имя</th>
+        <th>Email</th>
+        <th></th>
+        <th></th>
+      </tr>
+      {% for user in users %}
+        <tr>
+          <td>{{ user['id'] }}</td>
+          <td>{{ user['name'] }}</td>
+          <td>{{ user['email'] }}</td>
+          <td>
+            <a href="{{ url_for('edit_user', user_id=user['id']) }}">
+              Редактировать
+            </a>
+          </td>
+          <td>
+            <form action="{{ url_for('delete_user', user_id=user['id']) }}" method="POST">
+              <input type="submit" value="Удалить">
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+
+  {% else %}  
+    <p>Пользователей пока нет.</p>
+  {% endif %}
+
+{% endblock %}
