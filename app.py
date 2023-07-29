@@ -57,7 +57,7 @@ def init_db():
   else:
     print('DB already initialized')
 
-# вызываем эту функцию в скрипте  
+# вызываем эту функцию в скрипте
 init_db()
 
 
